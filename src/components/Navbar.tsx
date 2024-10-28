@@ -10,7 +10,7 @@ import { FaUser } from "react-icons/fa";
 import CustomPopup from "./CustomPopup";
 import { updateDarkMode } from "../redux/features/homeSlice";
 import { MdOutlineDarkMode, MdOutlineLightMode } from "react-icons/md";
-
+import Logo from '../../public/logo.png'
 const Navbar: FC = () => {
   const dispatch = useAppDispatch();
   const cartCount = useAppSelector(
@@ -30,10 +30,10 @@ const Navbar: FC = () => {
         <div className="flex justify-between items-center">
           <Link
             to="/"
-            className="text-4xl font-bold dark:text-white"
+            className="flex items-center text-4xl font-bold dark:text-white"
             data-test="main-logo"
           >
-           N-Fashion Hub
+          <img src={Logo} alt="ANK" width="20%"/> <span className="from-neutral-200" >Fashionhub</span> 
           </Link>
           <div className="lg:flex hidden w-full max-w-[500px]">
             <input

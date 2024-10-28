@@ -27,10 +27,10 @@ export const authSlice = createSlice({
         action.payload.username === "niranjan@gmail.com" &&
         action.payload.password === "niranjan"
       ) {
-        localStorage.setItem("username", "atuny0");
+        localStorage.setItem("username", "Niru");
         return {
           ...state,
-          username: "atuny0",
+          username: "Niru",
           modalOpen: false,
           isLoggedIn: true,
         };

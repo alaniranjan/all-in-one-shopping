@@ -46,7 +46,7 @@ const Profile: FC = () => {
     <div className="container mx-auto min-h-[83vh] w-full max-w-5xl dark:text-white">
       <h1 className="text-4xl p-4 font-bold font-lora">Your Account</h1>
       <div className="font-karla grid lg:grid-cols-3 md:grid-cols-5 grid-cols-1 gap-1 p-4">
-        <img src={info?.image} alt="pp" className="text-center" />
+        <img src="https://robohash.org/Terry.png?set=set4" width={"50%"}   alt="pp" className="text-center" />
         <table>
           <tbody>
             <tr>

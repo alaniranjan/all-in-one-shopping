@@ -1,4 +1,4 @@
-import { FC, useEffect, useState } from "react";
+import { FC, useEffect, useRef, useState } from "react";
 import { useParams } from "react-router-dom";
 import { useAppDispatch } from "../redux/hooks";
 import { addToCart, setCartState } from "../redux/features/cartSlice";
@@ -19,6 +19,7 @@ const lorem =
 
 const SingleProduct: FC = () => {
   const dispatch = useAppDispatch();
+  const headerRef = useRef<HTMLHeadingElement>(null);
   const { productID } = useParams();
   const [product, setProduct] = useState<Product>();
   const [imgs, setImgs] = useState<string[]>();
@@ -106,7 +107,17 @@ const SingleProduct: FC = () => {
     });
   };
 
+
+  const scrollToHeader = () => {
+    headerRef.current?.scrollIntoView({ behavior: "smooth" });
+  };
+
+
+
   return (
+    <div>
+        <h1 ref={headerRef} className="hidden">Header</h1>
+
     <div className="container mx-auto pt-8 dark:text-white">
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3 px-4 font-karla">
         <div className="space-y-2">
@@ -189,8 +200,11 @@ const SingleProduct: FC = () => {
         {product && <Reviews id={product?.id} />}
       </div>
       <hr className="mt-4" />
-      <ProductList title="Similar Products" products={similar} />
+      <ProductList title="Similar Products"
+       onProductClick={scrollToHeader} 
+      products={similar} />
       <br />
+    </div>
     </div>
   );
 };

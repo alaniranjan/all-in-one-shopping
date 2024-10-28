@@ -2,13 +2,14 @@ import { FC } from "react";
 import { Product } from "../models/Product";
 import ProductCard from "./ProductCard";
 
-const ProductList: FC<{ title: string; products: Product[] }> = ({
+const ProductList: FC<{ title: string; products: Product[],onProductClick: () => void  }> = ({
   title,
   products,
+  onProductClick,
 }) => (
   <div className="container mt-8 mx-auto px-4 dark:bg-slate-800">
     <div className="sm:flex items-center justify-between">
-      <h2 className="text-4xl font-medium font-lora dark:text-white">
+      <h2 className="text-2xl font-medium font-lora dark:text-white">
         {title}
       </h2>
     </div>
@@ -26,6 +27,7 @@ const ProductList: FC<{ title: string; products: Product[] }> = ({
           thumbnail={product.thumbnail}
           rating={product.rating}
           discountPercentage={product.discountPercentage}
+        
         />
       ))}
     </div>
