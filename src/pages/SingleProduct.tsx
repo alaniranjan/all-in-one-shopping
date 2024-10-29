@@ -104,7 +104,7 @@ const SingleProduct: FC = () => {
           duration: 3000,
         });
       }
-      // this changes
+      // This is single product page
     });
   };
 
