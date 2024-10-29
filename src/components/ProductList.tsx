@@ -2,10 +2,9 @@ import { FC } from "react";
 import { Product } from "../models/Product";
 import ProductCard from "./ProductCard";
 
-const ProductList: FC<{ title: string; products: Product[],onProductClick: () => void  }> = ({
+const ProductList: FC<{ title: string; products: Product[] }> = ({
   title,
   products,
-  onProductClick,
 }) => (
   <div className="container mt-8 mx-auto px-4 dark:bg-slate-800">
     <div className="sm:flex items-center justify-between">

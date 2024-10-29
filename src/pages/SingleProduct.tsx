@@ -108,9 +108,7 @@ const SingleProduct: FC = () => {
   };
 
 
-  const scrollToHeader = () => {
-    headerRef.current?.scrollIntoView({ behavior: "smooth" });
-  };
+
 
 
 
@@ -201,7 +199,6 @@ const SingleProduct: FC = () => {
       </div>
       <hr className="mt-4" />
       <ProductList title="Similar Products"
-       onProductClick={scrollToHeader} 
       products={similar} />
       <br />
     </div>
